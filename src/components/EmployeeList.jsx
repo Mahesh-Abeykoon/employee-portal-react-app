@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './styles/EmployeeList.scss';
 
 function EmployeeList() {
@@ -73,6 +73,9 @@ function EmployeeList() {
             </div>
             <div>
               <strong>Date of Join:</strong> {employee.dateOfJoin}
+            </div>
+            <div>
+              <strong>Status:</strong> {employee.isActive === true ? "Active" : "Retired"}
             </div>
             <button onClick={() => navigateToDetailsPage(employee.empNo)}>View</button>
             <button onClick={() => navigateToEditPage(employee.empNo)}>Edit</button>
