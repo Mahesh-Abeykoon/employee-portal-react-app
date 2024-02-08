@@ -29,3 +29,11 @@ Express.js
 Axios for making HTTP requests
 CORS for enabling cross-origin resource sharing
 ```
+
+![Site preview](/add_employee.png)
+![Site preview](/find.png)
+![Site preview](/home_bottom.png)
+![Site preview](/home.png)
+![Site preview](/read_one.png)
+![Site preview](/update.png)
+![Site preview](/update_2.png)
