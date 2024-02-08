@@ -1,41 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import EmployeeList from './components/EmployeeList';
+import AddEmployee from './components/AddEmployee';
+import EditEmployee from './components/EditEmployee';
+import EmployeeDetails from './components/EmployeeDetails'; 
 
-const App = () => {
-  const [employees, setEmployees] = useState([]);
-
-  const fetchEmployees = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/api/v1.0/Employees');
-      setEmployees(response.data);
-    } catch (error) {
-      console.error('Error fetching employees:', error.message);
-    }
-  };
-
-  useEffect(() => {
-    fetchEmployees();
-  }, []);
-
+function App() {
   return (
-    <div>
-      <h1>Employee Portal</h1>
-      <h2>Employee List</h2>
-      <ul>
-        {employees.map((employee, index) => (
-          <li key={index}>
-            <strong>Name:</strong> {employee.empName}<br />
-            <strong>Employee Number:</strong> {employee.empNo}<br />
-            <strong>Department:</strong> {employee.departmentCode}<br />
-            <strong>Date of Birth:</strong> {employee.dateOfBirth}<br />
-            <strong>Date of Join:</strong> {employee.dateOfJoin}<br />
-            <strong>Basic Salary:</strong> {employee.basicSalary}<br />
-            <strong>Active:</strong> {employee.isActive ? 'Yes' : 'No'}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<EmployeeList />} />
+          <Route path="/add" element={<AddEmployee />} />
+          <Route path="/edit/:empNo" element={<EditEmployee />} />
+          <Route path="/employee/:empNo" element={<EmployeeDetails/>} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
