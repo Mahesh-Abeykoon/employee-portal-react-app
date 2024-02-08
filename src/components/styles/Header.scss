@@ -1,7 +1,7 @@
 .header {
-  background-color: #414b58; 
+  background: linear-gradient(90deg,#1c1b41 2.34%,#4bc1c3 100.78%);
   color: white;
-  padding: 20px 0;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,5 +32,8 @@
 }
 
 .nav-item a:hover {
-  color: #535df3; 
+  color: #ebdc5b; 
+}
+.logo-img {
+  margin-left: 20px;
 }
