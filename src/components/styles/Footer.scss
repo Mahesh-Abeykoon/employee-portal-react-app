@@ -1,13 +1,16 @@
 .footer {
-    background-color: #333;
+  background: linear-gradient(90deg,#2d2d50 2.34%,#114647 100.78%);
     color: white;
     padding: 20px 0;
     text-align: center;
     margin-top: 20px; 
+    pointer-events: none;
+
   }
   
   .footer p {
     margin: 0;
+    font-weight: 500;
   }
   
   .footer p a {

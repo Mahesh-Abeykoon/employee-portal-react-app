@@ -1,5 +1,13 @@
-/* EmployeeList component styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+$primary-font-family: 'Noto Sans', sans-serif;
+$regular-font-weight: 200;
+
+body{
+    font-family: $primary-font-family;
+    font-weight: $regular-font-weight;
+
+}
 .employee-list-container {
     background-color: #f8f9fa;
     padding: 20px;
@@ -32,7 +40,7 @@
   }
   
   .search-input input:focus {
-    border-color: #007bff;
+    border-color: #2d5f96;
     outline: none;
   }
   
@@ -70,13 +78,13 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #4075ad;
     color: #fff;
     font-size: 20px;
     transition: background-color 0.3s ease;
     margin-right: 6px;
+    font-weight: 500;
   }
-  
   .employee-item button:hover {
     background-color: #0056b3;
   }
@@ -87,13 +95,13 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    background-color: #28a745; 
+    background-color: #3ea6eb; 
     color: #fff;
     font-size: 20px;
     transition: background-color 0.3s ease;
   }
   
   .add-new-btn:hover {
-    background-color: #218838; 
+    background-color:#5a95a0; 
+
   }
-  

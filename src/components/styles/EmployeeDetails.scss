@@ -1,20 +1,45 @@
 .employee-details {
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
 .employee-details h1 {
+  margin-bottom: 20px;
   color: #333;
 }
 
-.employee-details .detail-item {
+.employee-details p {
   margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+  text-align: left;
 }
 
-.employee-details .detail-item label {
+.employee-details .detail-label {
   font-weight: bold;
 }
 
-.employee-details .detail-item span {
+.employee-details .detail-value {
   margin-left: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
 }
