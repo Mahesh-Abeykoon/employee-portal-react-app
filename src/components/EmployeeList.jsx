@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/v1.0/Employees')
@@ -21,7 +22,7 @@ function EmployeeList() {
   };
 
   const navigateToEditPage = empNo => {
-    navigate(`edit/${empNo}`); 
+    navigate(`/edit/${empNo}`);
   };
 
   const deleteEmployee = empNo => {
@@ -35,11 +36,27 @@ function EmployeeList() {
       });
   };
 
+  const handleSearchChange = event => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredEmployees = employees.filter(employee =>
+    employee.empName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
       <h1>Employee List</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </div>
       <ul>
-        {employees.map(employee => (
+        {filteredEmployees.map(employee => (
           <li key={employee.empNo}>
             <div>
               <strong>Name:</strong> {employee.empName}
