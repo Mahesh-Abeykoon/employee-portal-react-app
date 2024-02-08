@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import './styles/EditEmployee.scss';
 
 function EditEmployee() {
   const [employeeData, setEmployeeData] = useState({
@@ -48,10 +49,10 @@ function EditEmployee() {
   };
 
   return (
-    <div>
-      <h1>Edit Employee</h1>
+    <div className="edit-employee">
+      <h1>Update</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="empName">Employee Name:</label>
           <input
             type="text"
@@ -61,7 +62,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="departmentCode">Department Code:</label>
           <input
             type="text"
@@ -71,7 +72,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="empAddressLine1">Address Line 1:</label>
           <input
             type="text"
@@ -81,7 +82,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="empAddressLine2">Address Line 2:</label>
           <input
             type="text"
@@ -91,7 +92,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="empAddressLine3">Address Line 3:</label>
           <input
             type="text"
@@ -101,7 +102,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="dateOfBirth">Date of Birth:</label>
           <input
             type="date"
@@ -111,7 +112,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="dateOfJoin">Date of Join:</label>
           <input
             type="date"
@@ -121,7 +122,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="basicSalary">Basic Salary:</label>
           <input
             type="number"
@@ -131,7 +132,7 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        {/* <div className="form-group">
           <label htmlFor="isActive">Active:</label>
           <input
             type="checkbox"
@@ -140,8 +141,11 @@ function EditEmployee() {
             checked={employeeData.isActive}
             onChange={handleChange}
           />
+        </div> */}
+        <div className="form-group">
+          <button type="submit">Update Employee</button>
+          <Link to="/" className="back-btn">Home</Link>
         </div>
-        <button type="submit">Update Employee</button>
       </form>
     </div>
   );

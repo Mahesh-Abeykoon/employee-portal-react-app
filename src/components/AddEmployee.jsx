@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import './styles/AddEmployee.scss';
 
 function AddEmployee() {
   const [employeeData, setEmployeeData] = useState({
@@ -17,6 +18,7 @@ function AddEmployee() {
   });
   const history = useNavigate();
 
+  
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
@@ -39,50 +41,54 @@ function AddEmployee() {
   };
 
   return (
-    <div>
+    <div className="add-employee">
       <h1>Add New Employee</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>Employee Number:</label>
           <input type="text" name="empNo" value={employeeData.empNo} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Name:</label>
           <input type="text" name="empName" value={employeeData.empName} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Address Line 1:</label>
           <input type="text" name="empAddressLine1" value={employeeData.empAddressLine1} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Address Line 2:</label>
           <input type="text" name="empAddressLine2" value={employeeData.empAddressLine2} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Address Line 3:</label>
           <input type="text" name="empAddressLine3" value={employeeData.empAddressLine3} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Department Code:</label>
           <input type="text" name="departmentCode" value={employeeData.departmentCode} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Date of Join:</label>
           <input type="date" name="dateOfJoin" value={employeeData.dateOfJoin} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Date of Birth:</label>
           <input type="date" name="dateOfBirth" value={employeeData.dateOfBirth} onChange={handleChange} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Basic Salary:</label>
           <input type="number" name="basicSalary" value={employeeData.basicSalary} onChange={handleChange} />
         </div>
-        <div>
+        {/* <div className="form-group">
           <label>Is Active:</label>
           <input type="checkbox" name="isActive" checked={employeeData.isActive} onChange={handleChange} />
+        </div> */}
+        <div className="form-group">
+          <button type="submit">Add Employee</button>
+          <Link to="/" className="back-btn">Home</Link>
         </div>
-        <button type="submit">Add Employee</button>
+
       </form>
     </div>
   );
