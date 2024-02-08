@@ -29,10 +29,11 @@ function EditEmployee() {
   }, [empNo]);
 
   const handleChange = e => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
     setEmployeeData(prevData => ({
       ...prevData,
-      [name]: value
+      [name]: newValue
     }));
   };
 
@@ -132,8 +133,9 @@ function EditEmployee() {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="form-group">
+        <div className="form-group">
           <label htmlFor="isActive">Active:</label>
+          <div className="checkbox-wrapper">
           <input
             type="checkbox"
             id="isActive"
@@ -141,7 +143,9 @@ function EditEmployee() {
             checked={employeeData.isActive}
             onChange={handleChange}
           />
-        </div> */}
+           <label className="toggle" htmlFor="isActive"></label>
+          </div>
+        </div>
         <div className="form-group">
           <button type="submit">Update Employee</button>
           <Link to="/" className="back-btn">Home</Link>
