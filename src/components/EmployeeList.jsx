@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import './styles/EmployeeList.scss';
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
@@ -45,9 +46,9 @@ function EmployeeList() {
   );
 
   return (
-    <div>
+    <div className="employee-list-container">
       <h1>Employee List</h1>
-      <div>
+      <div className="search-input">
         <input
           type="text"
           placeholder="Search by name"
@@ -55,9 +56,9 @@ function EmployeeList() {
           onChange={handleSearchChange}
         />
       </div>
-      <ul>
+      <ul className="employee-list">
         {filteredEmployees.map(employee => (
-          <li key={employee.empNo}>
+          <li className="employee-item" key={employee.empNo}>
             <div>
               <strong>Name:</strong> {employee.empName}
             </div>
@@ -79,7 +80,7 @@ function EmployeeList() {
           </li>
         ))}
       </ul>
-      <Link to="/add">Add New Employee</Link>
+      <button className="add-new-btn" onClick={() => navigate('/add')}>Add New Employee</button>
     </div>
   );
 }

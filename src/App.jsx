@@ -4,19 +4,24 @@ import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
 import EmployeeDetails from './components/EmployeeDetails'; 
-
+import Footer from './components/Footer';
+import Header from "./components/Header";
 function App() {
   return (
-    <Router>
       <div>
-        <Routes>
-          <Route path="/" element={<EmployeeList />} />
-          <Route path="/add" element={<AddEmployee />} />
-          <Route path="/edit/:empNo" element={<EditEmployee />} />
-          <Route path="/employee/:empNo" element={<EmployeeDetails/>} />
-        </Routes>
+        <Header/>
+        <Router>
+          <div>
+            <Routes>
+              <Route path="/" element={<EmployeeList />} />
+              <Route path="/add" element={<AddEmployee />} />
+              <Route path="/edit/:empNo" element={<EditEmployee />} />
+              <Route path="/employee/:empNo" element={<EmployeeDetails/>} />
+            </Routes>
+          </div>
+        </Router>
+        <Footer/>
       </div>
-    </Router>
   );
 }
 
