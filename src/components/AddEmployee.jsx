@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles/AddEmployee.scss';
 
 function AddEmployee() {
@@ -18,7 +18,6 @@ function AddEmployee() {
   });
   const history = useNavigate();
 
-  
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
@@ -79,16 +78,24 @@ function AddEmployee() {
         <div className="form-group">
           <label>Basic Salary:</label>
           <input type="number" name="basicSalary" value={employeeData.basicSalary} onChange={handleChange} />
+        </div>        
+        <div className="form-group">
+          <label htmlFor="isActive">Active:</label>
+          <div className="checkbox-wrapper">
+          <input
+            type="checkbox"
+            id="isActive"
+            name="isActive"
+            checked={employeeData.isActive}
+            onChange={handleChange}
+          />
+           <label className="toggle" htmlFor="isActive"></label>
+          </div>
         </div>
-        {/* <div className="form-group">
-          <label>Is Active:</label>
-          <input type="checkbox" name="isActive" checked={employeeData.isActive} onChange={handleChange} />
-        </div> */}
         <div className="form-group">
           <button type="submit">Add Employee</button>
           <Link to="/" className="back-btn">Home</Link>
         </div>
-
       </form>
     </div>
   );
