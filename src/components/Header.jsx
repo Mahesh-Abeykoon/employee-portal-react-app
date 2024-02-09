@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/Header.scss';
-import logo from '../img/myPos-logo.png';
+import '../styles/Header.scss';
+import logo from '../assets/images/myPos-logo.png';
 
 function Header() {
   return (
