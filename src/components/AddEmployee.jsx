@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import './styles/AddEmployee.scss';
+import '../styles/AddEmployee.scss';
 
 function AddEmployee() {
   const [employeeData, setEmployeeData] = useState({
