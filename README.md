@@ -2,6 +2,7 @@
 ### The application efficiently manages employee details by interacting with provided APIs, allowing users to view, add, edit, and delete employee records. It features a responsive design and utilizes modern web development techniques for a seamless user experience.
 
 ![Site preview](./employee-portal.gif)
+![Site preview](/form_validations.gif)
 
 ### Features
 
