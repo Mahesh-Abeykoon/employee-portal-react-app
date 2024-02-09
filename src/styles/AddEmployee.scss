@@ -27,7 +27,7 @@
   }
   
   .add-employee .form-group input {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     border: 2px solid #ced4da;
     border-radius: 30px;
@@ -38,7 +38,12 @@
   .add-employee .form-group input[type="checkbox"] {
     width: auto;
   }
-  
+  .add-employee .form-group .error {
+    color: rgb(252, 13, 13);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
   .add-employee .form-group button {
     background-color: #007bff;
     color: #fff;
@@ -121,4 +126,10 @@
   .checkbox-label input:checked + .checkbox-toggle::after {
     transform: translateX(20px);
   }
+  .active-status {
+    color: rgb(11, 20, 31);
+  }
   
+  .inactive-status {
+    color: rgb(131, 128, 129);
+  }
