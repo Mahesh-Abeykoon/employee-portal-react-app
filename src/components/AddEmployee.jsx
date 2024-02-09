@@ -16,7 +16,8 @@ function AddEmployee() {
     basicSalary: 0,
     isActive: true
   });
-  const history = useNavigate();
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
@@ -27,16 +28,48 @@ function AddEmployee() {
     }));
   };
 
+  const validateForm = () => {
+    const errors = {};
+    if (!employeeData.empNo.trim()) {
+      errors.empNo = '*Employee number is required';
+    }
+    if (!employeeData.empName.trim()) {
+      errors.empName = '*Name is required';
+    } 
+    if (!employeeData.empAddressLine1.trim()) {
+      errors.empAddressLine1 = '*Address Line 1 is required';
+    }
+    if (!employeeData.departmentCode.trim()){
+      errors.departmentCode = '*Department Code is required'
+    }
+    if (!employeeData.dateOfJoin.trim()){
+      errors.dateOfJoin = '*Date of join is required'
+    }
+    if (!employeeData.dateOfBirth.trim()){
+      errors.dateOfBirth = '*Date of birth Code is required'
+    }
+    if (!employeeData.dateOfBirth.trim()){
+      errors.dateOfBirth = '*Date of birth Code is required'
+    }
+    if (!employeeData.basicSalary){
+      errors.basicSalary = '*Basic salary is required'
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+  
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:3001/api/v1.0/Employee', employeeData)
+    if(validateForm()){
+      axios.post('http://localhost:3001/api/v1.0/Employee', employeeData)
       .then(response => {
         console.log('Employee added successfully:', response.data);
-        history('/'); 
+        navigate('/');
       })
       .catch(error => {
         console.error('Error adding employee:', error.message);
       });
+    }
   };
 
   return (
@@ -44,16 +77,25 @@ function AddEmployee() {
       <h1>Add New Employee</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Employee Number:</label>
+          <label> Employee Number:</label>
           <input type="text" name="empNo" value={employeeData.empNo} onChange={handleChange} />
+          <div>
+            {errors.empNo && <span className="error">{errors.empNo}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Name:</label>
           <input type="text" name="empName" value={employeeData.empName} onChange={handleChange} />
+          <div>
+            {errors.empName && <span className="error">{errors.empName}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Address Line 1:</label>
           <input type="text" name="empAddressLine1" value={employeeData.empAddressLine1} onChange={handleChange} />
+          <div>
+            {errors.empAddressLine1 && <span className="error">{errors.empAddressLine1}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Address Line 2:</label>
@@ -66,21 +108,33 @@ function AddEmployee() {
         <div className="form-group">
           <label>Department Code:</label>
           <input type="text" name="departmentCode" value={employeeData.departmentCode} onChange={handleChange} />
+          <div>
+            {errors.departmentCode && <span className="error">{errors.departmentCode}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Date of Join:</label>
           <input type="date" name="dateOfJoin" value={employeeData.dateOfJoin} onChange={handleChange} />
+          <div>
+          {errors.dateOfJoin && <span className="error">{errors.dateOfJoin}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Date of Birth:</label>
           <input type="date" name="dateOfBirth" value={employeeData.dateOfBirth} onChange={handleChange} />
+          <div>
+          {errors.dateOfBirth && <span className="error">{errors.dateOfBirth}</span>}
+          </div>
         </div>
         <div className="form-group">
           <label>Basic Salary:</label>
           <input type="number" name="basicSalary" value={employeeData.basicSalary} onChange={handleChange} />
+          <div>
+            {errors.basicSalary && <span className="error">{errors.basicSalary}</span>}
+          </div>
         </div>        
         <div className="form-group">
-          <label htmlFor="isActive">Active:</label>
+           <label>{employeeData.isActive ? <p className="active-status">Active</p> : <p className="inactive-status">Inactive</p>}   </label>        
           <div className="checkbox-wrapper">
           <input
             type="checkbox"
