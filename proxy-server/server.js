@@ -2,18 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const https = require('https');
+require('dotenv').config();
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json()); 
 
 const axiosInstance = axios.create({
   httpsAgent: new https.Agent({ rejectUnauthorized: false }) // Ignore SSL certificate verification
 });
+const apiToken = process.env.API_TOKEN;
+const baseURL = process.env.BASE_URL;
 
-const baseURL = 'http://examination.24x7retail.com/api/v1.0';
-const apiToken = '?D(G+KbPeSgVkYp3s6v9y$B&E)H@McQf';
 const headers = {
   'apiToken': apiToken,
   'Accept': 'application/json',
