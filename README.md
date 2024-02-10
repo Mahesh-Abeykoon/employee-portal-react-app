@@ -15,7 +15,14 @@
 http://examination.24x7retail.com.
 ```
 
+ ```jsx harmony
+Application Functionalities
+```
 ![Site preview](./employee-portal.gif)
+
+```jsx harmony
+Custom Data Validations
+```
 ![Site preview](/form_validations.gif)
 
 ### Features
@@ -45,10 +52,30 @@ Axios for making HTTP requests
 CORS for enabling cross-origin resource sharing
 ```
 
+```jsx harmony
+Data Creates
+```
 ![Site preview](/add_employee.png)
+
+```jsx harmony
+Data Searching
+```
 ![Site preview](/find.png)
+
+```jsx harmony
+Home Page Employees Data
+```
 ![Site preview](/home_bottom.png)
 ![Site preview](/home.png)
+
+```jsx harmony
+Data Reads
+```
 ![Site preview](/read_one.png)
+
+```jsx harmony
+Data Updates
+```
 ![Site preview](/update.png)
+
 ![Site preview](/update_2.png)
