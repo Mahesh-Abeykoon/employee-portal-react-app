@@ -1,5 +1,19 @@
 ## Employee Management React App
-### The application efficiently manages employee details by interacting with provided APIs, allowing users to view, add, edit, and delete employee records. It features a responsive design and utilizes modern web development techniques for a seamless user experience.
+### The application efficiently manages employee details by interacting with provided APIs, allowing 
+``` console
+1. Add new employee
+2. Edit existing employee
+3. Delete existing employee
+4. Search and display employee details
+5. Display list of existing employee
+```
+### It features a responsive design and utilizes modern web development techniques for a seamless user experience. 
+
+### The API endpoints for accessing employee and department data are provided through Swagger, with the base URL set to 
+
+```jsx harmony
+http://examination.24x7retail.com.
+```
 
 ![Site preview](./employee-portal.gif)
 ![Site preview](/form_validations.gif)
