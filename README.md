@@ -1,13 +1,5 @@
 ## Employee Management React App
-### The application efficiently manages employee details by interacting with provided APIs, allowing 
-``` console
-1. Add new employee
-2. Edit existing employee
-3. Delete existing employee
-4. Search and display employee details
-5. Display list of existing employee
-```
-### It features a responsive design and utilizes modern web development techniques for a seamless user experience. 
+### The application efficiently manages employee details by interacting with provided APIs. It features a responsive design and utilizes modern web development techniques for a seamless user experience. 
 
 ### The API endpoints for accessing employee and department data are provided through Swagger, with the base URL set to 
 
@@ -43,7 +35,6 @@ Custom Data Validations
 React.js
 Sass for styling
 React Router for client-side routing
-Backend (Proxy Server):
 ```
 #### Backend (Proxy Server):
 ```console
@@ -52,8 +43,42 @@ Axios for making HTTP requests
 CORS for enabling cross-origin resource sharing
 ```
 
+### Why Proxy Server?
+#### CORS (Cross-Origin Resource Sharing) Issue
+#### When making requests from a client-side application (like a React app) to a different domain, CORS policies enforced by browsers restrict these requests. This can cause errors like "Access to XMLHttpRequest has been blocked" or "No 'Access-Control-Allow-Origin' header".
+
+### API Security
+#### Directly exposing sensitive APIs to the client-side poses security risks, such as exposing API keys or endpoints. A proxy server acts as a middleman, shielding the frontend from direct communication with the API and ensuring secure data transmission.
+
+### Handling HTTP Requests
+#### The proxy server serves as an intermediary for handling HTTP requests. It can preprocess requests, add headers, modify responses, or handle authentication, providing flexibility and control over how data is fetched and transmitted.
+
+### Implementation in Node Server
+
 ```jsx harmony
-Data Creates
+// Define API endpoints
+const baseURL = 'http://examination.24x7retail.com/api/v1.0';
+const apiToken = 'DEFINE_THE_API_KEY';
+const headers = {
+  'apiToken': apiToken,
+  'Accept': 'application/json',
+};
+
+// Implement API routes
+// Example: GET all employees
+app.get('/api/v1.0/Employees', async (req, res) => {
+  try {
+    const response = await axiosInstance.get(`${baseURL}/Employees`, { headers });
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching employees:', error.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+// Add more API routes...
+```
+```jsx harmony
+Data Creation
 ```
 ![Site preview](/add_employee.png)
 
@@ -63,18 +88,18 @@ Data Searching
 ![Site preview](/find.png)
 
 ```jsx harmony
-Data Reads on Home Page
+Data Reading on Home Page
 ```
 ![Site preview](/home_bottom.png)
 ![Site preview](/home.png)
 
 ```jsx harmony
-Data Reads
+Data Reading 
 ```
 ![Site preview](/read-one.png)
 
 ```jsx harmony
-Data Updates
+Data Updating
 ```
 ![Site preview](/update.png)
 
