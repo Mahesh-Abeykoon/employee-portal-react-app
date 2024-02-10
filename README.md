@@ -57,7 +57,7 @@ CORS for enabling cross-origin resource sharing
 
 ```jsx harmony
 // Define API endpoints
-const baseURL = 'http://examination.24x7retail.com/api/v1.0';
+const baseURL = 'DEFINE_BASE_URL';
 const apiToken = 'DEFINE_THE_API_KEY';
 const headers = {
   'apiToken': apiToken,
