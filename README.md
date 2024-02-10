@@ -71,7 +71,7 @@ Home Page Employees Data
 ```jsx harmony
 Data Reads
 ```
-![Site preview](/read_one.png)
+![Site preview](/read-one.png)
 
 ```jsx harmony
 Data Updates
