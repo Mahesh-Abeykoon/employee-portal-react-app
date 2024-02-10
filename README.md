@@ -63,7 +63,7 @@ Data Searching
 ![Site preview](/find.png)
 
 ```jsx harmony
-Home Page Employees Data
+Data Reads on Home Page
 ```
 ![Site preview](/home_bottom.png)
 ![Site preview](/home.png)
