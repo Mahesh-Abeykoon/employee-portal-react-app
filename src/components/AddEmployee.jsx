@@ -77,73 +77,132 @@ function AddEmployee() {
       <h1>Add New Employee</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label> Employee Number:</label>
-          <input type="text" name="empNo" value={employeeData.empNo} onChange={handleChange} />
+          <label htmlFor="empNo">Employee Number:</label>
+          <input 
+            type="text" 
+            id="empNo" 
+            name="empNo" 
+            value={employeeData.empNo} 
+            onChange={handleChange} 
+          />
           <div>
             {errors.empNo && <span className="error">{errors.empNo}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Name:</label>
-          <input type="text" name="empName" value={employeeData.empName} onChange={handleChange} />
+          <label htmlFor="empName">Name:</label>
+          <input 
+            type="text" 
+            id="empName" 
+            name="empName" 
+            value={employeeData.empName} 
+            onChange={handleChange} 
+          />
           <div>
             {errors.empName && <span className="error">{errors.empName}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Address Line 1:</label>
-          <input type="text" name="empAddressLine1" value={employeeData.empAddressLine1} onChange={handleChange} />
+          <label htmlFor="empAddressLine1">Address Line 1:</label>
+          <input 
+            type="text" 
+            id="empAddressLine1" 
+            name="empAddressLine1" 
+            value={employeeData.empAddressLine1} 
+            onChange={handleChange} 
+          />
           <div>
             {errors.empAddressLine1 && <span className="error">{errors.empAddressLine1}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Address Line 2:</label>
-          <input type="text" name="empAddressLine2" value={employeeData.empAddressLine2} onChange={handleChange} />
+          <label htmlFor="empAddressLine2">Address Line 2:</label>
+          <input 
+            type="text" 
+            id="empAddressLine2" 
+            name="empAddressLine2" 
+            value={employeeData.empAddressLine2} 
+            onChange={handleChange} 
+          />
         </div>
         <div className="form-group">
-          <label>Address Line 3:</label>
-          <input type="text" name="empAddressLine3" value={employeeData.empAddressLine3} onChange={handleChange} />
+          <label htmlFor="empAddressLine3">Address Line 3:</label>
+          <input 
+            type="text" 
+            id="empAddressLine3" 
+            name="empAddressLine3" 
+            value={employeeData.empAddressLine3} 
+            onChange={handleChange} 
+          />
         </div>
         <div className="form-group">
-          <label>Department Code:</label>
-          <input type="text" name="departmentCode" value={employeeData.departmentCode} onChange={handleChange} />
+          <label htmlFor="departmentCode">Department Code:</label>
+          <input 
+            type="text" 
+            id="departmentCode" 
+            name="departmentCode" 
+            value={employeeData.departmentCode} 
+            onChange={handleChange} 
+          />
           <div>
             {errors.departmentCode && <span className="error">{errors.departmentCode}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Date of Join:</label>
-          <input type="date" name="dateOfJoin" value={employeeData.dateOfJoin} onChange={handleChange} />
+          <label htmlFor="dateOfJoin">Date of Join:</label>
+          <input 
+            type="date" 
+            id="dateOfJoin" 
+            name="dateOfJoin" 
+            value={employeeData.dateOfJoin} 
+            onChange={handleChange} 
+          />
           <div>
-          {errors.dateOfJoin && <span className="error">{errors.dateOfJoin}</span>}
+            {errors.dateOfJoin && <span className="error">{errors.dateOfJoin}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Date of Birth:</label>
-          <input type="date" name="dateOfBirth" value={employeeData.dateOfBirth} onChange={handleChange} />
+          <label htmlFor="dateOfBirth">Date of Birth:</label>
+          <input 
+            type="date" 
+            id="dateOfBirth" 
+            name="dateOfBirth" 
+            value={employeeData.dateOfBirth} 
+            onChange={handleChange} 
+          />
           <div>
-          {errors.dateOfBirth && <span className="error">{errors.dateOfBirth}</span>}
+            {errors.dateOfBirth && <span className="error">{errors.dateOfBirth}</span>}
           </div>
         </div>
         <div className="form-group">
-          <label>Basic Salary:</label>
-          <input type="number" name="basicSalary" value={employeeData.basicSalary} onChange={handleChange} />
+          <label htmlFor="basicSalary">Basic Salary:</label>
+          <input 
+            type="number" 
+            id="basicSalary" 
+            name="basicSalary" 
+            value={employeeData.basicSalary} 
+            onChange={handleChange} 
+          />
           <div>
             {errors.basicSalary && <span className="error">{errors.basicSalary}</span>}
           </div>
-        </div>        
+        </div>
         <div className="form-group">
-           <label>{employeeData.isActive ? <p className="active-status">Active</p> : <p className="inactive-status">Inactive</p>}   </label>        
+          <label>
+            {employeeData.isActive 
+              ? <p className="active-status">Active</p> 
+              : <p className="inactive-status">Inactive</p>
+            }
+          </label>
           <div className="checkbox-wrapper">
-          <input
-            type="checkbox"
-            id="isActive"
-            name="isActive"
-            checked={employeeData.isActive}
-            onChange={handleChange}
-          />
-           <label className="toggle" htmlFor="isActive"></label>
+            <input
+              type="checkbox"
+              id="isActive"
+              name="isActive"
+              checked={employeeData.isActive}
+              onChange={handleChange}
+            />
+            <label className="toggle" htmlFor="isActive"></label>
           </div>
         </div>
         <div className="form-group">
@@ -152,7 +211,7 @@ function AddEmployee() {
         </div>
       </form>
     </div>
-  );
+  );  
 }
 
 export default AddEmployee;
