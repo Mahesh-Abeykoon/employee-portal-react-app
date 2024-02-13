@@ -16,7 +16,7 @@ Custom Data Validations
 ```
 ![Site preview](/form_validations.gif)
 
-### Features
+>### Features
 
 ```console
  Add New Employee: Easily add new employees to the system.
@@ -26,7 +26,7 @@ Custom Data Validations
  Display Employee List: View a comprehensive list of all existing employees.
 ```
 
-### The technologies used in the project include:
+>### Technologies
 
 
 #### Frontend:
