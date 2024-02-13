@@ -3,9 +3,8 @@
 
 ### The API endpoints for accessing employee and department data are provided through Swagger, with the base URL set to 
 
-```jsx harmony
-http://examination.24x7retail.com.
-```
+>http://examination.24x7retail.com.
+
 
  ```jsx harmony
 Application Functionalities
