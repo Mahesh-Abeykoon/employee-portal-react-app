@@ -44,15 +44,19 @@ CORS for enabling cross-origin resource sharing
 ```
 
 ### Why Proxy Server?
-#### CORS (Cross-Origin Resource Sharing) Issue
-
- ```console
-When making requests from a client-side application (like a React app) to a different domain, CORS policies enforced by browsers restrict these requests. This can cause errors like "Access to XMLHttpRequest has been blocked" or "No 'Access-Control-Allow-Origin' header".
+```console
+CORS (Cross-Origin Resource Sharing) Issue
 ```
-### API Security
+### When making requests from a client-side application (like a React app) to a different domain, CORS policies enforced by browsers restrict these requests. This can cause errors like "Access to XMLHttpRequest has been blocked" or "No 'Access-Control-Allow-Origin' header".
+
+```console
+ API Security
+```
 #### Directly exposing sensitive APIs to the client-side poses security risks, such as exposing API keys or endpoints. A proxy server acts as a middleman, shielding the frontend from direct communication with the API and ensuring secure data transmission.
 
-### Handling HTTP Requests
+```console
+ Handling HTTP Requests
+```
 #### The proxy server serves as an intermediary for handling HTTP requests. It can preprocess requests, add headers, modify responses, or handle authentication, providing flexibility and control over how data is fetched and transmitted.
 
 ### Implementation in Node Server
