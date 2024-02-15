@@ -37,9 +37,9 @@ React Router for client-side routing
 ```
 #### Backend (Proxy Server):
 ```console
-Express.js
-Axios for making HTTP requests
-CORS for enabling cross-origin resource sharing
+1. Express.js
+2. Axios for making HTTP requests
+3. CORS for enabling cross-origin resource sharing
 ```
 
 ### Why Proxy Server?
