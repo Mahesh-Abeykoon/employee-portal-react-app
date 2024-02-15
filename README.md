@@ -19,11 +19,11 @@ Custom Data Validations
 >### Features
 
 ```console
- Add New Employee: Easily add new employees to the system.
- Edit Existing Employees: Update details of existing employees seamlessly.
- Delete Employees: Remove employees from the database with a simple click.
- Search Functionality: Quickly search for specific employees using search functionality.
- Display Employee List: View a comprehensive list of all existing employees.
+1. Add New Employee: Easily add new employees to the system.
+2. Edit Existing Employees: Update details of existing employees seamlessly.
+3. Delete Employees: Remove employees from the database with a simple click.
+4. Display Employee List: View a comprehensive list of all existing employees.
+5. Search Functionality: Quickly search for specific employees using search functionality.
 ```
 
 >### Technologies
