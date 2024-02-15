@@ -31,9 +31,9 @@ Custom Data Validations
 
 #### Frontend:
 ```console
-React.js
-Sass for styling
-React Router for client-side routing
+1. React.js
+2. Sass for styling
+3. React Router for client-side routing
 ```
 #### Backend (Proxy Server):
 ```console
