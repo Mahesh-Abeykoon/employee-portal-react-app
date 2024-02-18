@@ -1,4 +1,4 @@
-> ## Employee Management React App
+> ## 🚀 Employee Management React App
 ### The application efficiently manages employee details by interacting with provided APIs. It features a responsive design and utilizes modern web development techniques for a seamless user experience. 
 
 ### The API endpoints for accessing employee and department data are provided through Swagger, with the base URL set to 
@@ -16,7 +16,7 @@ Custom Data Validations
 ```
 ![Site preview](/form_validations.gif)
 
->### Features
+>### 🔍 Features
 
 ```console
 1. Add New Employee: Easily add new employees to the system.
@@ -26,7 +26,7 @@ Custom Data Validations
 5. Search Functionality: Quickly search for specific employees using search functionality.
 ```
 
->### Technologies
+>### 👨‍💻 Technologies
 
 
 #### Frontend:
@@ -35,14 +35,14 @@ Custom Data Validations
 2. Sass for styling
 3. React Router for client-side routing
 ```
-#### Backend (Proxy Server):
+#### 🛡️ Backend (Proxy Server):
 ```console
 1. Express.js
 2. Axios for making HTTP requests
 3. CORS for enabling cross-origin resource sharing
 ```
 
-### Why Proxy Server?
+### 🔐 Why Proxy Server?
 >CORS (Cross-Origin Resource Sharing) Issue
 
 ### When making requests from a client-side application (like a React app) to a different domain, CORS policies enforced by browsers restrict these requests. This can cause errors like "Access to XMLHttpRequest has been blocked" or "No 'Access-Control-Allow-Origin' header".
@@ -54,7 +54,7 @@ Custom Data Validations
 >Handling HTTP Requests
 #### The proxy server serves as an intermediary for handling HTTP requests. It can preprocess requests, add headers, modify responses, or handle authentication, providing flexibility and control over how data is fetched and transmitted.
 
-### Implementation in Node Server
+### 🔨 Implementation in Node Server
 
 ```jsx harmony
 // Define API endpoints
