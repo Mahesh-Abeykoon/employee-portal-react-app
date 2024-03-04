@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import '../styles/EmployeeDetails.scss';
 
-const SERVER_URL = 'https://mern-todo-app-sx6x.onrender.com';
+const SERVER_URL = 'https://employee-portal-react-app-backend.onrender.com';
 
 function EmployeeDetails() {
   const [employee, setEmployee] = useState(null);
