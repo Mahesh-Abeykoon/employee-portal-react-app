@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import '../styles/EditEmployee.scss';
 
+const SERVER_URL = 'https://mern-todo-app-sx6x.onrender.com';
+
 function EditEmployee() {
   const [employeeData, setEmployeeData] = useState({
     empName: '',
@@ -19,7 +21,7 @@ function EditEmployee() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/v1.0/Employee/${empNo}`)
+    axios.get(`${SERVER_URL}/api/v1.0/Employee/${empNo}`)
       .then(response => {
         setEmployeeData(response.data); 
       })
@@ -39,7 +41,7 @@ function EditEmployee() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.put(`http://localhost:3001/api/v1.0/Employee`, employeeData)
+    axios.put(`${SERVER_URL}/api/v1.0/Employee`, employeeData)
       .then(response => {
         console.log('Employee updated successfully:', response.data);
         navigate('/');
