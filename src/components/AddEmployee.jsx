@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/AddEmployee.scss';
 
+const SERVER_URL = https://employee-portal-react-app-backend.onrender.com;
+
 function AddEmployee() {
   const [employeeData, setEmployeeData] = useState({
     empNo: '',
@@ -61,7 +63,7 @@ function AddEmployee() {
   const handleSubmit = e => {
     e.preventDefault();
     if(validateForm()){
-      axios.post('http://localhost:3001/api/v1.0/Employee', employeeData)
+      axios.post(`${SERVER_URL}/api/v1.0/Employee`, employeeData)
       .then(response => {
         console.log('Employee added successfully:', response.data);
         navigate('/');
