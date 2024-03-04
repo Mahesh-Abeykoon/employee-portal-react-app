@@ -3,13 +3,15 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styles/EmployeeList.scss';
 
+const SERVER_URL = 'https://mern-todo-app-sx6x.onrender.com';
+
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/v1.0/Employees')
+    axios.get(`${SERVER_URL}/api/v1.0/Employees`)
       .then(response => {
         setEmployees(response.data);
       })
@@ -27,7 +29,7 @@ function EmployeeList() {
   };
 
   const deleteEmployee = empNo => {
-    axios.delete(`http://localhost:3001/api/v1.0/Employee/${empNo}`)
+    axios.delete(`${SERVER_URL}/api/v1.0/Employee/${empNo}`)
       .then(response => {
         console.log('Employee deleted successfully');
         setEmployees(prevEmployees => prevEmployees.filter(employee => employee.empNo !== empNo));
