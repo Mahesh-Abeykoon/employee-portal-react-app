@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/AddEmployee.scss';
 
-const SERVER_URL = https://employee-portal-react-app-backend.onrender.com;
+const SERVER_URL = "https://employee-portal-react-app-backend.onrender.com";
 
 function AddEmployee() {
   const [employeeData, setEmployeeData] = useState({
