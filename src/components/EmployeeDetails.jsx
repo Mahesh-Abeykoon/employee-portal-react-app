@@ -10,7 +10,7 @@ function EmployeeDetails() {
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/v1.0/Employee/${empNo}`);
+        const response = await axios.get(`${SERVER_URL}/api/v1.0/Employee/${empNo}`);
         setEmployee(response.data);
       } catch (error) {
         console.error('Error fetching employee details:', error.message);
